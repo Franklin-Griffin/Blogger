@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Post
+{% endblock %}
+
+{% block main %}
+	<!-- Page Header-->
+	<header class="masthead2" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUIx4-dl5nrgEE2JSyjhDJIZY_NauZCmBnaY2Ocja9XMER1dXC4WQ9J1QiKlaJqaisWiU:https://upload.wikimedia.org/wikipedia/commons/a/ab/Writing_with_a_fountain_pen_%2528Unsplash%2529.jpg&usqp=CAU')">
+			<div class="container position-relative px-4 px-lg-5">
+					<div class="row gx-4 gx-lg-5 justify-content-center">
+							<div class="col-md-10 col-lg-8 col-xl-7">
+									<div class="site-heading">
+											<h1>Post</h1>
+											<span class="subheading">Write your own post for the world to see</span>
+									</div>
+							</div>
+					</div>
+			</div>
+	</header>
+	<div class="center">
+	    <form action="/post" method="post">
+	        <div class="mb-3">
+	            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="title" name="title" placeholder="Title" type="text" value="{{cache}}">
+	            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="subtitle" name="subtitle" placeholder="Subtitle" type="text" value="{{cache}}">
+							<p class="center">You may write the post either in plaintext, HTML, or <a target="_blank" href="https://www.markdownguide.org/basic-syntax/">markdown</a>.</p>
+	            <textarea class="form-control mx-auto w-auto" id="text" name="text" placeholder="Text" rows="10" cols="1000" style="max-width: 75%;"></textarea>
+	        </div>
+	        <button class="centbtn btn btn-success" type="submit" name="hm">Post</button>
+	        <br>
+	    </form>
+	</div>
+{% endblock %}

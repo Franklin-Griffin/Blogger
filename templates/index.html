@@ -1,0 +1,68 @@
+<!-- Template from StartBootstrap -->
+{% extends "layout.html" %}
+
+{% block title %}
+	Welcome
+{% endblock %}
+
+{% block main %}
+<!-- Masthead-->
+<header class="masthead">
+		<div class="container px-4 px-lg-5 h-100">
+				<div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+						<div class="col-lg-8 align-self-end">
+								<h1 class="text-white font-weight-bold">Blogger: Your Favorite Place for the Latest News</h1>
+								<hr class="divider" />
+						</div>
+						<div class="col-lg-8 align-self-baseline">
+								<p class="text-white-75 mb-5">Blogger is free and kept up-to-date 24/7 by our news curators.</p>
+								<a class="btn btn-primary btn-xl" href="#services">Find Out More</a>
+						</div>
+				</div>
+		</div>
+</header>
+<!-- Services-->
+<section class="page-section" id="services">
+		<div class="container px-4 px-lg-5">
+				<h2 class="text-center mt-0">At Your Service</h2>
+				<hr class="divider" />
+				<div class="row gx-4 gx-lg-5">
+						<div class="col-md-4 text-center">
+								<div class="mt-5">
+										<div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+										<h3 class="h4 mb-2">Up-to-Date</h3>
+										<p class="text-muted mb-0">The site is constantly updated by our news curators to tell you what is going on in the world.</p>
+								</div>
+						</div>
+						<div class="col-md-4 text-center">
+								<div class="mt-5">
+										<div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+										<h3 class="h4 mb-2">Available to all</h3>
+										<p class="text-muted mb-0">Blogger is completely free! No ads, no subscriptions, no nothing.</p>
+								</div>
+						</div>
+						<div class="col-md-4 text-center">
+								<div class="mt-5">
+										<div class="mb-2"><i class="bi-pen fs-1 text-primary"></i></div>
+										<h3 class="h4 mb-2">Open to Users</h3>
+										<p class="text-muted mb-0">Users of the site can write their own articles (under moderation) if they feel some news is being misrepresented.</p>
+								</div>
+						</div>
+				</div>
+		</div>
+</section>
+<!-- Start -->
+<section class="page-section bg-primary" id="start">
+		<div class="container px-4 px-lg-5">
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+						<div class="col-lg-8 text-center">
+								<h2 class="text-white mt-0">We're just what you need!</h2>
+								<hr class="divider divider-light" />
+								<p class="text-white-75 mb-4">Blogger has everything you need to stay up-to-date in today's constantly changing world.</p>
+								<a class="btn btn-light btn-xl" href="/register">Sign up!</a><br>
+								<a class="btn btn-dark btn-xl" href="/login">Or log in</a>
+						</div>
+				</div>
+		</div>
+</section>
+{% endblock %}

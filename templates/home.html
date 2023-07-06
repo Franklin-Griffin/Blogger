@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Home
+{% endblock %}
+
+{% block main %}
+	<!-- Page Header-->
+	<header class="masthead2" style="background-image: url('static/img/home-bg.jpg')">
+			<div class="container position-relative px-4 px-lg-5">
+					<div class="row gx-4 gx-lg-5 justify-content-center">
+							<div class="col-md-10 col-lg-8 col-xl-7">
+									<div class="site-heading">
+											<h1>Home</h1>
+											<span class="subheading">Today's latest headlines</span>
+									</div>
+							</div>
+					</div>
+			</div>
+	</header>
+	<!-- Main Content-->
+	<div class="container px-4 px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+					<div class="col-md-10 col-lg-8 col-xl-7">
+							{% if posts|length != 0 %}
+								<form action="/read" method="post">
+											{% for post in posts %}
+													<!-- Post preview-->
+													<div class="post-preview">
+															<button class="linkbtn" type="submit" name="id" value="{{post['post_id']}}">
+																	<h2 class="post-title">{{post["title"]}}</h2>
+																	<h3 class="post-subtitle">{{post["subtitle"]}}</h3>
+																	{% if post["user"] == session["user_name"] %}
+																		<p class="post-meta">Posted by <b>{{post["user"]}}</b> (You!)</p>
+																		<button class="btn btn-danger" type="submit" name="del" value="{{post['post_id']}}">Delete</button>
+																	{% else %}
+																		<p class="post-meta">Posted by <b>{{post["user"]}}</b></p>
+																	{% endif %}
+															</button>
+													</div>
+													<!-- Divider-->
+													<hr class="my-4" />
+											{% endfor %}
+								</form>
+								{% if posts|length > 5 %}
+									<!-- Pager-->
+										<div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="/posts">Older Posts →</a></div>
+								{% endif %}
+							{% else %}
+									<h1>There are no posts yet :(</h1>
+									<!-- Divider-->
+									<hr class="my-4" />
+							{% endif %}
+					</div>
+			</div>
+	</div>
+{% endblock %}

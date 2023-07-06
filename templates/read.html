@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Read {{ title }}
+{% endblock %}
+
+{% block main %}
+<!-- Page Header-->
+<header class="masthead2" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8x3LaZEX_9wAhFSwMY88PcpsahqKk2ZKakw:https://images.pexels.com/photos/46274/pexels-photo-46274.jpeg&usqp=CAU')">
+		<div class="container position-relative px-4 px-lg-5">
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+						<div class="col-md-10 col-lg-8 col-xl-7">
+								<div class="post-heading">
+										<h1>{{ title }}</h1>
+										<h2 class="subheading">{{ subtitle }}</h2>
+										<span class="meta">
+												{% if user == session["user_name"] %}
+													Posted by {{ user }} (You!)
+												{% else %}
+													Posted by {{user }}
+												{% endif %}
+										</span>
+								</div>
+						</div>
+				</div>
+		</div>
+</header>
+<!-- Post Content-->
+<article class="mb-4">
+		<div class="container px-4 px-lg-5">
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+						<div class="col-md-10 col-lg-8 col-xl-7">
+								{{ txt|safe }}
+						</div>
+				</div>
+		</div>
+</article>
+{% endblock %}
